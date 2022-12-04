@@ -11,7 +11,7 @@ class Item extends StatelessWidget {
   final bool withCountryNames;
   final double? leadingPadding;
   final bool trailingSpace;
-
+  final double flagWidth;
   const Item({
     Key? key,
     this.country,
@@ -21,6 +21,7 @@ class Item extends StatelessWidget {
     this.withCountryNames = false,
     this.leadingPadding = 12,
     this.trailingSpace = true,
+    this.flagWidth = 32.0,
   }) : super(key: key);
 
   @override
@@ -39,6 +40,7 @@ class Item extends StatelessWidget {
             country: country,
             showFlag: showFlag,
             useEmoji: useEmoji,
+            flagWidth: flagWidth,
           ),
           SizedBox(width: 12.0),
           Text(
@@ -56,8 +58,13 @@ class _Flag extends StatelessWidget {
   final Country? country;
   final bool? showFlag;
   final bool? useEmoji;
-
-  const _Flag({Key? key, this.country, this.showFlag, this.useEmoji})
+  final double flagWidth;
+  const _Flag(
+      {Key? key,
+      this.country,
+      this.showFlag,
+      this.useEmoji,
+      this.flagWidth = 32})
       : super(key: key);
 
   @override
@@ -71,7 +78,7 @@ class _Flag extends StatelessWidget {
                   )
                 : Image.asset(
                     country!.flagUri,
-                    width: 32.0,
+                    width: flagWidth,
                     package: 'intl_phone_number_input',
                     errorBuilder: (context, error, stackTrace) {
                       return SizedBox.shrink();
