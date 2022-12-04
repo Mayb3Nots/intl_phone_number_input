@@ -42,6 +42,7 @@ class SelectorButton extends StatelessWidget {
                 child: DropdownButton<Country>(
                   key: Key(TestHelper.DropdownButtonKeyValue),
                   hint: Item(
+                    flagWidth: selectorConfig.flagWidth,
                     country: country,
                     showFlag: selectorConfig.showFlags,
                     useEmoji: selectorConfig.useEmoji,
@@ -55,6 +56,7 @@ class SelectorButton extends StatelessWidget {
                 ),
               )
             : Item(
+                flagWidth: selectorConfig.flagWidth,
                 country: country,
                 showFlag: selectorConfig.showFlags,
                 useEmoji: selectorConfig.useEmoji,
@@ -86,6 +88,7 @@ class SelectorButton extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.only(right: 8.0),
               child: Item(
+                flagWidth: selectorConfig.flagWidth,
                 country: country,
                 showFlag: selectorConfig.showFlags,
                 useEmoji: selectorConfig.useEmoji,
@@ -104,6 +107,7 @@ class SelectorButton extends StatelessWidget {
       return DropdownMenuItem<Country>(
         value: country,
         child: Item(
+          flagWidth: selectorConfig.flagWidth,
           key: Key(TestHelper.countryItemKeyValue(country.alpha2Code)),
           country: country,
           showFlag: selectorConfig.showFlags,

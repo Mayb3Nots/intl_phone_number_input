@@ -11,7 +11,7 @@ class Item extends StatelessWidget {
   final bool withCountryNames;
   final double? leadingPadding;
   final bool trailingSpace;
-  final double flagWidth;
+  final double? flagWidth;
   const Item({
     Key? key,
     this.country,
@@ -58,7 +58,7 @@ class _Flag extends StatelessWidget {
   final Country? country;
   final bool? showFlag;
   final bool? useEmoji;
-  final double flagWidth;
+  final double? flagWidth;
   const _Flag(
       {Key? key,
       this.country,
